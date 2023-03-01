@@ -1,5 +1,5 @@
 /* 
-  File Name:     /controller/user.js
+  File Name:     /config/db.js
   Student Name:  Yuen Kwan LI
   Student ID:    301228849
   Date:          1-MAR-2023 
