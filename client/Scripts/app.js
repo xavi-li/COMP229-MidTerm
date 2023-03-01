@@ -1,3 +1,10 @@
+/* 
+  File Name:     /client/Scripts/app.s
+  Student Name:  Yuen Kwan LI
+  Student ID:    301228849
+  Date:          1-MAR-2023 
+*/
+
 /* custom JS goes here */
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */
@@ -105,15 +112,25 @@ $.fn.pageMe = function(opts){
 
 // IIFE
 (function(){
-  $(".btn-danger").click(function(event){
-    if(!confirm("Are you sure?")) {
-      event.preventDefault();
-      window.location.assign("/");
-    
-  });
 
- /* pagination code */
-  $('#myTable').pageMe(
-    {pagerSelector:'#myPager',showPrevNext:true,hidePageNumbers:false,perPage:6}
-    );
+    function Start()
+    {
+        console.log("App Started...");
+
+        let deleteButtons = document.querySelectorAll('.btn-danger');
+        
+        for(button of deleteButtons)
+        {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are you sure?")) 
+                {
+                    event.preventDefault();
+                    window.location.assign('/books');
+                }
+            });
+        }
+    }
+
+    window.addEventListener("load", Start);
+
 })();
